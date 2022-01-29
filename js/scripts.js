@@ -74,11 +74,8 @@ var serviceTextArea = document.getElementById("service-text");
 var currentService = 0;
 
 nextArrow.onclick = () => {
-  if (currentService == (ourServices.length - 1)) {
-    currentService = 0;
-  } else {
-    currentService += 1;
-  }
+  currentService == (ourServices.length - 1) ? currentService = 0 : currentService += 1;
+
   var title = ourServices[currentService].title;
   var text = ourServices[currentService].text;
   serviceTitleArea.innerHTML = title;
@@ -86,11 +83,7 @@ nextArrow.onclick = () => {
 }
 
 previousArrow.onclick = () => {
-  if (currentService == 0) {
-    currentService = ourServices.length - 1;
-  } else {
-    currentService -= 1;
-  }
+  currentService == 0 ? currentService = ourServices.length - 1 : currentService -= 1;
   
   var title = ourServices[currentService].title;
   var text = ourServices[currentService].text;
@@ -99,3 +92,5 @@ previousArrow.onclick = () => {
 }
 
 // Footer
+
+document.getElementById("current_year").innerHTML = new Date().getFullYear();
